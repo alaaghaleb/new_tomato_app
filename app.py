@@ -40,7 +40,6 @@ def predict():
         # Make prediction using the loaded model
         preds = model.predict(x)
         pred_class = np.argmax(preds, axis=1)[0]
-
         # Map prediction to disease names
         disease_names = {
             0: "Bacterial Spot",
@@ -51,14 +50,14 @@ def predict():
             5: "Spider Mites",
             6: "Target Spot",
             7: "Yellow Leaf Curl Virus",
-            8: "Mosaic Virus"
+            8: "Mosaic Virus",
+            9: "healthy"
         }
         predicted_disease = disease_names.get(pred_class, "Unknown")
-        if pred_class not in [0,1,2,3,4,5,6,7,8]:
-            return josnify({'wrongprediction': "Please enter a good iamge"}), 200
+        if pred_class not in [0,1,2,3,4,5,6,7,8,9]:
+            return jsonify({'wrongprediction': "Please enter a good iamge"}), 200
         else:
             return jsonify({'prediction': predicted_disease}), 200
-
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
