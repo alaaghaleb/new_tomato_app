@@ -8,7 +8,7 @@ import io
 app = Flask(__name__)
 
 # Load your TensorFlow model
-model = tf.keras.models.load_model(r"D:\graduation project\tomato_project\inception.model.h5")
+model = tf.keras.models.load_model(r"D:\graduation project\Toamto_project_2\inception.model.h5")
 
 
 @app.route('/predict', methods=['POST'])
