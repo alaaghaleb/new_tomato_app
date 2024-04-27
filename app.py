@@ -63,4 +63,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')  # Run Flask app on a publicly accessible server
+    app.run(host='0.0.0.0', port=5000)  # Run Flask app on a publicly accessible server
