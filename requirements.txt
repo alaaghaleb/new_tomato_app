@@ -1,5 +1,5 @@
 gunicorn
-numpy~=1.25.2
-tensorflow~=2.14.0
-flask~=3.0.3
-Pillow~=9.3.0
+numpy
+tensorflow
+flask
+Pillow
