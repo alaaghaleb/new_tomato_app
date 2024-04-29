@@ -36,9 +36,9 @@ def predict():
         x = np.array(pil_image)
         x = x / 255.0  # Normalize pixel values
         x = np.expand_dims(x, axis=0)  # Add batch dimension
-        return jsonify({'response': "it's work before the predict"})
         # Make prediction using the loaded model
         preds = model.predict(x)
+        return jsonify({'response': "it's work after the predict"})
         pred_class = np.argmax(preds, axis=1)[0]
         # Map prediction to disease names
         disease_names = {
